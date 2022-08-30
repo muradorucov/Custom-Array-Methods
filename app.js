@@ -100,7 +100,44 @@ const foreachNumbers = [1, 2, 3].forEachMethod((num) => {
     console.log("ForEach Mehtod result: ", num)  // 1, 2, 3
 });
 
+
+
 //flat
+// Array.prototype.flatMethod = function (cb) {
+//     const result = [];
+//     let item = 0;
+//     for (let i = 0; i < this.length; i++) {
+//         result.push(cb(this[i], i, this));
+//         if(cb(this[i])){
+//             item++
+//         }    
+//     }  
+//     if(item=0){ 
+//         return fale
+//     }else{
+//         return true
+//     }
+// }
+
+// const flatNumbers = [4, 2, 7, 8, [1, 3]].flatMethod((num) => num < 5 )
+
+// console.log("Flat Mehtod result: ", flatNumbers);
+// [].concat(...oneLevelDeep)
+
+
+
 //reverse
+Array.prototype.reverseMethod = function (cb) {
+    const result = [];
+    for (let i = this.length; i >0; i--) {
+        result.push(this[i-1]);
+    }
+
+    return result;
+
+}
+let reverseNumbers = [1, 2, 3, 4];
+
+console.log(reverseNumbers.reverseMethod());
 //join
 //includes.
