@@ -17,7 +17,25 @@ console.log("Map Mehtod result: ", mappedNumbers); // [2, 4, 6]
 
 
 //some
+Array.prototype.someMethod = function (cb) {
+    const result = [];
+    let item = 0;
+    for (let i = 0; i < this.length; i++) {
+        result.push(cb(this[i], i, this));
+        if(cb(this[i])){
+            item++
+        }    
+    }  
+    if(item=0){ 
+        return fale
+    }else{
+        return true
+    }
+}
 
+const someNumbers = [4, 2, 7, 8, 1, 3].someMethod((num) => num < 5 )
+
+console.log("Some Mehtod result: ", someNumbers);
 
 
 
