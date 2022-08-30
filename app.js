@@ -139,5 +139,21 @@ Array.prototype.reverseMethod = function (cb) {
 let reverseNumbers = [1, 2, 3, 4];
 
 console.log(reverseNumbers.reverseMethod());
+
+
 //join
+Array.prototype.joinMethod = function (cb) {
+    const result = [];
+    let resultJoin="";
+
+    for (let i = 0; i < this.length; i++) {
+        result.push(cb(this[i], i, this));
+        resultJoin=resultJoin+this[i]+","
+    }
+    return resultJoin
+}
+
+let joinNumbers = ['Murad', 'Orucov', 'Haciyev', 'Qulu'];
+
+console.log(joinNumbers.joinMethod((value)=>value));
 //includes.
